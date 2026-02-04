@@ -80,7 +80,7 @@ public class Lab3 {
         // This line is needed to clear the input buffer after reading numbers before you start reading Strings.
         scanner.nextLine(); 
 
-        // --- Task 4: What’s Your Name? ---
+        // --- Task 4: What's Your Name? ---
         // BLOCK 1: VARIABLE DECLARATIONS
         // TODO: Declare all String variables needed for the first and last name.
         String firstName, lastName;
@@ -94,7 +94,7 @@ public class Lab3 {
         lastName = scanner.nextLine();
         
         // BLOCK 3: FINAL OUTPUT
-        System.out.println("\n--- Task 4: What’s Your Name? ---");
+        System.out.println("\n--- Task 4: What's Your Name? ---");
         // TODO: Print the user's full name.
         System.out.println("Your full name is: " + firstName + " " + lastName);
 

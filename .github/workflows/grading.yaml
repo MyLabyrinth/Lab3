@@ -22,42 +22,64 @@ jobs:
 
       - name: Run Tests and Calculate Grade
         run: |
-          # --- ADJUST POINT VALUES HERE ---
-          T1_PTS=10
-          T2_PTS=15
-          T3_PTS=15
-          T4_PTS=20
-          T5_PTS=20
-          T6_PTS=20
-          # --------------------------------
-          
           TOTAL_SCORE=0
-          
           echo "### Lab 3 Results" >> $GITHUB_STEP_SUMMARY
           echo "| Task | Points Possible | Status | Score |" >> $GITHUB_STEP_SUMMARY
           echo "| --- | --- | --- | --- |" >> $GITHUB_STEP_SUMMARY
 
-          # Helper function to run tests
-          run_test() {
-            local task_num=$1
-            local pts=$2
-            
-            # removed the redirect to /dev/null to see error logs
-            if javac Lab3.java TestTask$task_num.java && java TestTask$task_num; then
-              echo "| Task $task_num | $pts | ✅ Passed | $pts |" >> $GITHUB_STEP_SUMMARY
-              TOTAL_SCORE=$((TOTAL_SCORE + pts))
-            else
-              echo "| Task $task_num | $pts | ❌ Failed | 0 |" >> $GITHUB_STEP_SUMMARY
-            fi
-          }
+          # Task 1
+          echo "Compiling Task 1..."
+          if javac Lab3.java TestTask1.java && java TestTask1; then
+            echo "| Task 1 | 10 | ✅ Passed | 10 |" >> $GITHUB_STEP_SUMMARY
+            TOTAL_SCORE=$((TOTAL_SCORE + 10))
+          else
+            echo "| Task 1 | 10 | ❌ Failed | 0 |" >> $GITHUB_STEP_SUMMARY
+          fi
 
-          # Execute the tests with your defined points
-          run_test 1 $T1_PTS
-          run_test 2 $T2_PTS
-          run_test 3 $T3_PTS
-          run_test 4 $T4_PTS
-          run_test 5 $T5_PTS
-          run_test 6 $T6_PTS
+          # Task 2
+          echo "Compiling Task 2..."
+          if javac Lab3.java TestTask2.java && java TestTask2; then
+            echo "| Task 2 | 15 | ✅ Passed | 15 |" >> $GITHUB_STEP_SUMMARY
+            TOTAL_SCORE=$((TOTAL_SCORE + 15))
+          else
+            echo "| Task 2 | 15 | ❌ Failed | 0 |" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          # Task 3
+          echo "Compiling Task 3..."
+          if javac Lab3.java TestTask3.java && java TestTask3; then
+            echo "| Task 3 | 15 | ✅ Passed | 15 |" >> $GITHUB_STEP_SUMMARY
+            TOTAL_SCORE=$((TOTAL_SCORE + 15))
+          else
+            echo "| Task 3 | 15 | ❌ Failed | 0 |" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          # Task 4
+          echo "Compiling Task 4..."
+          if javac Lab3.java TestTask4.java && java TestTask4; then
+            echo "| Task 4 | 20 | ✅ Passed | 20 |" >> $GITHUB_STEP_SUMMARY
+            TOTAL_SCORE=$((TOTAL_SCORE + 20))
+          else
+            echo "| Task 4 | 20 | ❌ Failed | 0 |" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          # Task 5
+          echo "Compiling Task 5..."
+          if javac Lab3.java TestTask5.java && java TestTask5; then
+            echo "| Task 5 | 20 | ✅ Passed | 20 |" >> $GITHUB_STEP_SUMMARY
+            TOTAL_SCORE=$((TOTAL_SCORE + 20))
+          else
+            echo "| Task 5 | 20 | ❌ Failed | 0 |" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          # Task 6
+          echo "Compiling Task 6..."
+          if javac Lab3.java TestTask6.java && java TestTask6; then
+            echo "| Task 6 | 20 | ✅ Passed | 20 |" >> $GITHUB_STEP_SUMMARY
+            TOTAL_SCORE=$((TOTAL_SCORE + 20))
+          else
+            echo "| Task 6 | 20 | ❌ Failed | 0 |" >> $GITHUB_STEP_SUMMARY
+          fi
 
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "## Final Grade: $TOTAL_SCORE / 100" >> $GITHUB_STEP_SUMMARY
