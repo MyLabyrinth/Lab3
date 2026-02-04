@@ -2,6 +2,7 @@ name: Lab 3 Grading
 on:
   push:
     branches: [ "main", "autogradetest" ]
+  workflow_dispatch:  
 
 jobs:
   grade:
@@ -15,6 +16,9 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+          
+      - name: Debug - List Files
+        run: ls -R
 
       - name: Run Tests and Calculate Grade
         run: |
@@ -38,7 +42,8 @@ jobs:
             local task_num=$1
             local pts=$2
             
-            if javac Lab3.java TestTask$task_num.java && java TestTask$task_num > /dev/null 2>&1; then
+            # removed the redirect to /dev/null to see error logs
+            if javac Lab3.java TestTask$task_num.java && java TestTask$task_num; then
               echo "| Task $task_num | $pts | ✅ Passed | $pts |" >> $GITHUB_STEP_SUMMARY
               TOTAL_SCORE=$((TOTAL_SCORE + pts))
             else
