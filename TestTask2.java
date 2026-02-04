@@ -1,15 +1,29 @@
-import static org.junit.Assert.assertTrue;
-import org.junit.Test;
 import java.io.*;
+import java.util.Random;
 
 public class TestTask2 {
-    @Test
-    public void testHowManyMinutes() {
-        String input = "10\n20\n3\n15\n"; // Skip task 1, input 3 hours 15 mins
+    public static void main(String[] args) {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
+        PrintStream originalOut = System.out;
+        InputStream originalIn = System.in;
         System.setOut(new PrintStream(out));
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        Lab02.main(new String[]{});
-        assertTrue("Task 2: Total minutes (3*60+15=195) not found.", out.toString().contains("195"));
+        try {
+            Random rand = new Random();
+            int h = rand.nextInt(24);
+            int m = rand.nextInt(60);
+            int expected = (h * 60) + m;
+            System.setIn(new ByteArrayInputStream((h + "\n" + m + "\n").getBytes()));
+            
+            Lab3.main(new String[]{});
+            
+            String res = out.toString();
+            if (res.contains(String.valueOf(expected))) {
+                System.exit(0);
+            } else {
+                originalOut.println("Task 2 Fail: Expected " + expected + " minutes for " + h + "h " + m + "m.");
+                System.exit(1);
+            }
+        } catch (Exception e) { System.exit(1); }
+        finally { System.setOut(originalOut); System.setIn(originalIn); }
     }
 }

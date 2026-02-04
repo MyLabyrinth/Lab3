@@ -1,17 +1,27 @@
-import static org.junit.Assert.assertTrue;
-import org.junit.Test;
 import java.io.*;
 
 public class TestTask5 {
-    @Test
-    public void testMadLibs() {
-        String input = "0\n0\n0\n0\n0\nFirst\nLast\ndog\nwalk\nschool\nsmart\n"; // Skip 1-4
+    public static void main(String[] args) {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
+        PrintStream originalOut = System.out;
+        InputStream originalIn = System.in;
         System.setOut(new PrintStream(out));
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        Lab02.main(new String[]{});
-        String result = out.toString();
-        assertTrue("Task 5: Word 'dog' missing.", result.contains("dog"));
-        assertTrue("Task 5: Word 'walk' missing.", result.contains("walk"));
+        try {
+            String n = "cat", v = "jump", p = "moon", a = "shiny";
+            System.setIn(new ByteArrayInputStream((n + "\n" + v + "\n" + p + "\n" + a + "\n").getBytes()));
+            
+            Lab3.main(new String[]{});
+            
+            String res = out.toString().toLowerCase();
+            boolean allPresent = res.contains(n) && res.contains(v) && res.contains(p) && res.contains(a);
+
+            if (allPresent) {
+                System.exit(0);
+            } else {
+                originalOut.println("Task 5 Fail: Story did not include all the user's words.");
+                System.exit(1);
+            }
+        } catch (Exception e) { System.exit(1); }
+        finally { System.setOut(originalOut); System.setIn(originalIn); }
     }
 }

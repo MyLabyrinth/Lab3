@@ -1,15 +1,31 @@
-import static org.junit.Assert.assertTrue;
-import org.junit.Test;
 import java.io.*;
+import java.util.regex.Pattern;
 
 public class TestTask4 {
-    @Test
-    public void testName() {
-        String input = "0\n0\n0\n0\n0\nSarah\nLin\n"; // Skip 1-3
+    public static void main(String[] args) {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
+        PrintStream originalOut = System.out;
+        InputStream originalIn = System.in;
         System.setOut(new PrintStream(out));
-        System.setIn(new ByteArrayInputStream(input.getBytes()));
-        Lab02.main(new String[]{});
-        assertTrue("Task 4: Full name 'Sarah Lin' not found.", out.toString().contains("Sarah Lin"));
+        try {
+            // Using a unique name to ensure it's not hardcoded from the example
+            String f = "Pace";
+            String l = "University";
+            System.setIn(new ByteArrayInputStream((f + "\n" + l + "\n").getBytes()));
+            
+            Lab3.main(new String[]{});
+            
+            String res = out.toString();
+            // Case insensitive check for the full name appearing
+            boolean found = Pattern.compile("(?i)" + f + ".*" + l).matcher(res).find();
+
+            if (found) {
+                System.exit(0);
+            } else {
+                originalOut.println("Task 4 Fail: Could not find '" + f + " " + l + "' in output.");
+                System.exit(1);
+            }
+        } catch (Exception e) { System.exit(1); }
+        finally { System.setOut(originalOut); System.setIn(originalIn); }
     }
 }
