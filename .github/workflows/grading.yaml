@@ -1,5 +1,7 @@
 name: Lab 3 Grading
-on: [push]
+on:
+  push:
+    branches: [ "main", "autogradetest" ]
 
 jobs:
   grade:
