@@ -2,7 +2,10 @@
 
 ## Recap: Lab (Github) Workflow 📝 - How to Work on Labs
 
-Follow these steps for every lab carefully to access, complete, and submit your assignment. Please make sure you write your code in the correct file. **Do NOT edit or adjust any files that has the word "Test" in the name. Failure to do may result in receiving a 0 in this lab.**
+Follow these steps for every lab carefully to access, complete, and submit your assignment. 
+
+**Please make sure you write your code in the correct file.**
+**Do NOT edit or adjust any files that has the word "Test" in the name. Failure to do may result in receiving a 0 in this lab.**
 
 1.  **Accept the Assignment**
 
