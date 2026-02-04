@@ -9,17 +9,26 @@ public class Lab3 {
         // --- Task 1: Square Feet ---
         // BLOCK 1: VARIABLE DECLARATIONS
         // TODO: Declare all integer variables needed for width, length, and area.
+        int width, length, area;
 
         // BLOCK 2: INPUT GATHERING (Prompts must precede scanner calls)
         // TODO: Prompt for and read the width, storing it in your variable.
         // TODO: Prompt for and read the length, storing it in your variable.
+        
+        System.out.print("Enter Width:");
+        width = scanner.nextInt();
+
+        System.out.print("Enter Length:");
+        length = scanner.nextInt();
 
         // BLOCK 3: CALCULATIONS
         // TODO: Calculate the area and store it in your area variable.
+        area = width * length;
 
         // BLOCK 4: FINAL OUTPUT
         System.out.println("\n--- Task 1: Square Feet ---");
         // TODO: Print the final calculated area.
+        System.out.println("The area is: " + area);
 
 
         // --- Task 2: How Many Minutes? ---
