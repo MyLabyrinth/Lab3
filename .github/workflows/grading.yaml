@@ -2,7 +2,6 @@ name: Lab 3 Grading
 on:
   push:
     branches: [ "main", "autogradetest" ]
-  workflow_dispatch:  
 
 jobs:
   grade:
