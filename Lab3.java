@@ -1,7 +1,7 @@
 // Import the Scanner class to read user input
 import java.util.Scanner;
 
-public class Lab02 {
+public class Lab3 {
     public static void main(String[] args) {
         // Create a Scanner object to get input from the console
         Scanner scanner = new Scanner(System.in);
