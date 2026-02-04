@@ -2,13 +2,16 @@
 
 ## Recap: Lab (Github) Workflow 📝 - How to Work on Labs
 
-Follow these steps for every lab carefully to access, complete, and submit your assignment.
+Follow these steps for every lab carefully to access, complete, and submit your assignment. 
+
+**Please make sure you write your code in the correct file.**
+**Do NOT edit or adjust any files that has the word "Test" in the name. Failure to do may result in receiving a 0 in this lab.**
 
 1.  **Accept the Assignment**
 
     - Open the Lab Assignment Link the professor provided.
-    - Click **"Accept the assignment"**. This will create your personal assignment repository on GitHub under the `OOP-Fall-2025` organization.
-    - You'll be taken to your repository page. Verify that the URL looks like `github.com/OOP-Fall-2025/lab-number-yourusername`.
+    - Click **"Accept the assignment"**. This will create your personal assignment repository on GitHub under the correct organization for the semester.
+    - You'll be taken to your repository page. Verify that the URL looks like `github.com/organization-this-semester/lab-number-yourusername`.
 
 2.  **Clone the Repository to Your Computer**
 
