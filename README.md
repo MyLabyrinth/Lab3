@@ -1,4 +1,4 @@
-# Lab 02
+# Lab 3
 
 ## Recap: Lab (Github) Workflow 📝 - How to Work on Labs
 
@@ -34,7 +34,7 @@ Follow these steps for every lab carefully to access, complete, and submit your 
 
 ---
 
-## Lab 02 Tasks
+## Lab 3 Tasks
 
 ## Task 1: Square Feet
 
