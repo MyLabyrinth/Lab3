@@ -150,5 +150,5 @@ public class Lab3 {
 
         // Close the scanner at the end of the program to prevent resource leaks.
         scanner.close();
-    }    
+    }
 }
